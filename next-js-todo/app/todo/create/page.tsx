@@ -1,5 +1,6 @@
 "use client";
 import createUsers from "@/lib/createUsers";
+import getUsers from "@/lib/getUsers";
 import { FormEvent, useState } from "react";
 
 const UserCreate = () => {
@@ -12,6 +13,7 @@ const UserCreate = () => {
       setEmail("");
     });
   };
+  const users = getUsers();
 
   return (
     <div>
@@ -29,6 +31,7 @@ const UserCreate = () => {
         />
         <button type="submit">사용자 생성하기</button>
       </form>
+      {JSON.stringify(users)}
     </div>
   );
 };
